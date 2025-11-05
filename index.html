@@ -320,4 +320,325 @@
   </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ludwing Santiago Blanco Castellanos - Portafolio Profesional</title>
+  <style>
+    :root {
+      --color-bg-dark: #0b1220;
+      --color-bg-translucent: rgba(13, 23, 41, 0.78);
+      --color-primary: #143581;
+      --color-silver: #dfe6ee;
+      --color-white: #f6f9fc;
+      --color-shadow: 0 4px 32px rgba(20, 53, 129, 0.12);
+      --color-accent: #c6c7ca;
+      --border-accent: #4f6e8e;
+    }
 
+    /* ==== RESETEO ==== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", "Arial", sans-serif;
+      color: var(--color-white);
+      background: var(--color-bg-dark);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ==== FONDO ==== */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: url('unnamed-2.jpg') center/cover no-repeat;
+      filter: blur(8px) brightness(0.75);
+      opacity: 0.9;
+    }
+
+    /* ==== CONTENEDOR PRINCIPAL ==== */
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 30px 25px;
+      background: var(--color-bg-translucent);
+      border-radius: 20px;
+      border: 1.5px solid var(--border-accent);
+      box-shadow: var(--color-shadow);
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==== CABECERA ==== */
+    header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+    .nombre {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-silver);
+      letter-spacing: 1.5px;
+      text-shadow: 0 2px 14px #10274a;
+      animation: slideIn 1s ease;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .profesion {
+      font-size: 1.25rem;
+      color: var(--color-white);
+      margin-top: 8px;
+      text-shadow: 0 1px 10px #1435818c;
+    }
+
+    .divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+      margin: 18px auto 25px;
+      border-radius: 4px;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 8px #4f6e8e55; }
+      to { box-shadow: 0 0 16px #4f6e8eaa; }
+    }
+
+    /* ==== SECCIONES ==== */
+    section {
+      margin-bottom: 2.5rem;
+      padding: 18px 20px;
+      background: rgba(15, 29, 54, 0.61);
+      border-left: 2.5px solid var(--border-accent);
+      border-radius: 14px;
+      box-shadow: 0 1.5px 18px #14294d19;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 20px #1435813f;
+    }
+
+    h2 {
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      text-shadow: 0 1px 7px #4f6e8e66;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    p, li {
+      font-size: 1.05rem;
+      color: var(--color-silver);
+      line-height: 1.5rem;
+    }
+
+    ul.info-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .info-list li {
+      margin-bottom: 0.6rem;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: underline;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: var(--color-white);
+    }
+
+    /* ==== GRID DE FORMACIÓN ==== */
+    .formacion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: rgba(22, 36, 63, 0.6);
+      border-radius: 12px;
+      padding: 15px 20px;
+      transition: all 0.3s ease;
+      border-left: 2px solid var(--border-accent);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 3px 15px #1435814a;
+    }
+
+    .card b {
+      color: var(--color-white);
+    }
+
+    .skills, .hobbies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill, .hobby {
+      background: linear-gradient(90deg, #132b41, #788da233 80%);
+      color: var(--color-accent);
+      padding: 0.3rem 0.9rem;
+      border-radius: 15px;
+      font-size: 1rem;
+      transition: transform 0.3s ease, background 0.3s;
+      box-shadow: 0 1px 7px #7d8fa77b;
+    }
+
+    .skill:hover, .hobby:hover {
+      transform: scale(1.08);
+      background: linear-gradient(90deg, #143581, #4f6e8e);
+    }
+
+    .referencia {
+      background: rgba(21, 32, 52, 0.85);
+      border-left: 3px solid var(--border-accent);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      padding: 10px 15px;
+      box-shadow: 0 1px 13px #173c644c;
+    }
+
+    @media (max-width: 700px) {
+      .content-wrapper { padding: 20px 10px; }
+      .nombre { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <header>
+      <div class="nombre">Ludwing Santiago Blanco Castellanos</div>
+      <div class="profesion">Técnico en Asistencia Administrativa | Est. Ingeniería Industrial</div>
+      <div class="divider"></div>
+    </header>
+
+    <section>
+      <h2>Sobre mí</h2>
+      <p>
+        Cuento con experiencia demostrada en asesoría comercial y soporte administrativo, destacando por mi capacidad para resolver problemas, adaptarme rápidamente y mantener una excelente atención al cliente. Busco seguir creciendo en entornos donde pueda aplicar mis conocimientos y aportar a la eficiencia operativa.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experiencia Laboral</h2>
+      <ul class="info-list">
+        <li><b>Técnico en Asistencia Administrativa</b> – SANDA STORE (Mar 2023 - Jul 2024)<br>
+          Apoyé la gestión documental, coordinación de agendas y procesos de inventario, facturación y compras.</li>
+        <li><b>Asesor de Ventas</b> – Fachero’s (Mar 2023 - Abr 2024)<br>
+          Alcancé metas de ventas mediante atención personalizada, manejo de caja y fidelización de clientes.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Formación y Certificaciones</h2>
+      <div class="formacion-grid">
+        <div class="card">
+          <h3 style="color:#c6c7ca;">🎓 Estudios</h3>
+          <ul class="info-list">
+            <li><b>Ingeniería Industrial</b> (En curso)<br>Unidades Tecnológicas de Santander</li>
+            <li><b>Técnico en Asistencia Administrativa</b> (Feb 2021 - Nov 2022)<br>SENA</li>
+            <li><b>Bachiller Técnico en Énfasis Administrativo</b> (Ene 2011 - Nov 2022)<br>Colegio Gonzalo Jiménez Navas</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="color:#c6c7ca;">🏅 Certificaciones</h3>
+          <ul class="info-list">
+            <li><b>Fundamentos del Sistema de Gestión de Seguridad y Salud en el Trabajo</b> – SENA (Jun 2025)<br>
+              <a href="https://certificados.sena.edu.co/CertificadoDigital/com.sena.guardar?var1=9122003223076CC1097911522C" target="_blank">Ver certificado</a></li>
+            <li><b>Análisis de Sistemas de Seguridad y Salud en el Trabajo</b> – SENA (Jun 2025)<br>
+              <a href="https://certificados.sena.edu.co/CertificadoDigital/com.sena.guardar?var1=9122003223069CC1097911522C" target="_blank">Ver certificado</a></li>
+            <li><b>Técnico en Asistencia Administrativa</b> – SENA (Nov 2022)<br>
+              <a href="https://certificados.sena.edu.co/CertificadoDigital/com.sena.guardar?var1=9309002256964TI1097911522C" target="_blank">Ver certificado</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reconocimientos</h2>
+      <div class="referencia">
+        <b>Ganador Competencia Triángulo del Servicio al Cliente</b><br>
+        Nivel Departamental Zone Skills 2022 - SENA / Gonzalo Jiménez Navas
+      </div>
+      <div class="referencia">
+        <b>Mejor Aprendiz Técnico en Asistencia Administrativa</b> (Nov 2022) - SENA
+      </div>
+    </section>
+
+    <section>
+      <h2>Habilidades</h2>
+      <div class="skills">
+        <div class="skill">Comunicación efectiva</div>
+        <div class="skill">Gestión</div>
+        <div class="skill">Comprensión de dificultades</div>
+        <div class="skill">Adaptación</div>
+        <div class="skill">Versatilidad</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Hobbies</h2>
+      <div class="hobbies">
+        <div class="hobby">Cocina</div>
+        <div class="hobby">Fotografía</div>
+        <div class="hobby">Dibujo</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Referencias</h2>
+      <div class="referencia">
+        <b>Yury Marcela Castellanos Gallo</b> (Sobrino)<br>
+        Responsable, honesto y eficiente. Dispuesto a aprender y dar siempre lo mejor.
+      </div>
+      <div class="referencia">
+        <b>Luis Andres Castellanos Castellanos</b> (Padrino)<br>
+        Persona responsable, de buena conducta, trabajadora y comprometida.
+      </div>
+    </section>
+
+    <section>
+      <h2>Datos Personales</h2>
+      <ul class="info-list">
+        <li>📍 Floridablanca, Colombia</li>
+        <li>📧 ludwingblancocas@gmail.com</li>
+        <li>📱 +57 300 169 6244</li>
+        <li>📅 Nacimiento: 21 mayo 2006</li>
+        <li>🔗 <a href="https://www.linkedin.com/in/ludwing-blanco-927a47281/" target="_blank">LinkedIn</a></li>
+        <li>🆔 CC: 1.097.911.522</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
