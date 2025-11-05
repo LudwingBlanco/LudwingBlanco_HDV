@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludwing Santiago Blanco Castellanos - Presentación Profesional</title>
+  <style>
+    :root {
+      --color-bg-dark: #0b1220;
+      --color-bg-translucent: rgba(13, 23, 41, 0.78);
+      --color-primary: #143581;
+      --color-silver: #dfe6ee;
+      --color-white: #f6f9fc;
+      --color-shadow: 0 4px 32px rgba(20, 53, 129, 0.12);
+      --color-accent: #c6c7ca;
+      --border-accent: #4f6e8e;
+    }
+    body, html {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      color: var(--color-white);
+      background: var(--color-bg-dark);
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: url('unnamed-2.jpg') center/cover no-repeat;
+      filter: blur(6px) brightness(0.77);
+      opacity: 0.91;
+      pointer-events: none;
+    }
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+      max-width: 930px;
+      margin: 40px auto;
+      background: var(--color-bg-translucent);
+      padding: 34px 25px;
+      border-radius: 18px;
+      box-shadow: var(--color-shadow);
+      border: 1.5px solid var(--border-accent);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+    .nombre {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--color-silver);
+      text-shadow: 0 2px 14px #10274a;
+    }
+    .profesion {
+      font-size: 1.22rem;
+      color: var(--color-white);
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 10px #1435818c;
+    }
+    .divider {
+      width: 70px;
+      height: 3px;
+      margin: 12px auto 22px auto;
+      border-radius: 3px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+      box-shadow: 0 1px 10px #23416838;
+    }
+    section {
+      margin-bottom: 2.2rem;
+      background: rgba(15, 29, 54, 0.61);
+      padding: 16px 15px 8px 15px;
+      border-radius: 13px;
+      border-left: 2.5px solid var(--border-accent);
+      box-shadow: 0 1.5px 15px 0 #14294d19;
+    }
+    h2 {
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      text-shadow: 0 1px 7px #4f6e8e66;
+    }
+    p, li, div {
+      font-size: 1.04rem;
+      color: var(--color-silver);
+      text-shadow: 0 1px 12px #0520343a;
+    }
+    ul.info-list {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0;
+    }
+    .info-list li {
+      margin-bottom: 0.6rem;
+      font-size: 1.08rem;
+      display: flex;
+      align-items: flex-start;
+    }
+    .info-list a {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+    .skills, .hobbies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.7rem;
+    }
+    .skill, .hobby {
+      background: linear-gradient(90deg, #132b41, #788da233 80%);
+      color: var(--color-accent);
+      box-shadow: 0 1px 7px #7d8fa77b;
+      padding: 0.2rem 0.9rem;
+      border-radius: 15px;
+      font-size: 1.03rem;
+      margin-bottom: 4px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .referencia {
+      background: rgba(21, 32, 52, 0.85);
+      color: var(--color-silver);
+      border-left: 3px solid var(--border-accent);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      padding: 10px 15px 7px 15px;
+      box-shadow: 0 1px 13px #173c644c;
+    }
+    .certificados, .reconocimientos {
+      font-size: 1rem;
+    }
+    .cert-title {
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+    @media (max-width: 700px) {
+      .content-wrapper { padding: 10px 2px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <header>
+      <div class="nombre">Ludwing Santiago Blanco Castellanos</div>
+      <div class="profesion">Técnico en Asistencia Administrativa | Est. Ingeniería Industrial</div>
+      <div class="divider"></div>
+    </header>
+    <section>
+      <h2>Sobre mí</h2>
+      <p>
+        Cuento con experiencia demostrada en roles de asesoría comercial y soporte en bodega, destacando por mi capacidad para resolver problemas y mi compromiso con la satisfacción del cliente. Busco aplicar mis habilidades en un entorno dinámico donde pueda contribuir al crecimiento y eficiencia operativa.
+      </p>
+    </section>
+    <section>
+      <h2>Experiencia laboral</h2>
+      <ul class="info-list">
+        <li>1: <b>Técnico en Asistencia Administrativa</b> – SANDA STORE (Mar 2023 - Jul 2024)<br>
+          Apoyé la gestión y organización de documentos administrativos. Coordiné agendas, programé reuniones y realicé seguimiento a solicitudes. Manejo de sistemas internos y herramientas informáticas. Soporte en inventarios, facturación y compras.
+        </li>
+        <li>2: <b>Asesor de ventas</b> – Fachero’s tienda física (Mar 2023 - Abr 2024)<br>
+          Alcancé metas de ventas mediante atención personalizada y fidelización de clientes. Manejo de caja y procesos de facturación. Coordinación y organización de mercancía en sala de ventas.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Estudios</h2>
+      <ul class="info-list">
+        <li>1: <b>Ingeniería Industrial</b> (En curso)<br>Unidades Tecnológicas de Santander</li>
+        <li>2: <b>Técnico en asistencia administrativa</b> (Feb 2021 - Nov 2022)<br>SENA</li>
+        <li>3: <b>Bachiller Técnico en énfasis administrativa</b> (Ene 2011 - Nov 2022)<br>Colegio Gonzalos Jimenez Navas</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Reconocimientos</h2>
+      <div class="reconocimientos">
+        <b>1: Ganador Competencia Triángulo del Servicio al Cliente</b><br>
+        Nivel Departamental Zone Skills 2022 - SENA / Gonzalo Jimenez Navas<br><br>
+        <b>2: Mejor Aprendiz Técnico en Asistencia Administrativa</b> (Nov 2022) - SENA
+      </div>
+    </section>
+    <section>
+      <h2>Certificaciones</h2>
+      <div class="certificados">
+        <div>1: <span class="cert-title">Fundamentos del Sistema de Gestión de Seguridad y Salud en el Trabajo</span>
+          &nbsp;<a href="https://certificados.sena.edu.co/CertificadoDigital/com.sena.guardar?var1=9122003223076CC1097911522C" target="_blank">descargar</a>
+           – SENA (Junio 2025)
+        </div>
+        <div>2: <span class="cert-title">Técnico en Asistencia Administrativa</span>
+          &nbsp;<a href="https://certificados.sena.edu.co/CertificadoDigital/com.sena.guardar?var1=9309002256964TI1097911522C" target="_blank">descargar</a>
+           – SENA (Noviembre 2022)
+        </div>
+        <div>3: <span class="cert-title">Análisis de Sistemas de Seguridad y Salud en el Trabajo</span>
+          &nbsp;<a href="https://certificados.sena.edu.co/CertificadoDigital/com.sena.guardar?var1=9122003223069CC1097911522C" target="_blank">descargar</a>
+           – SENA (Junio 2025)
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Habilidades</h2>
+      <div class="skills">
+        <div class="skill">Comunicación efectiva</div>
+        <div class="skill">Gestión</div>
+        <div class="skill">Comprensión de dificultades</div>
+        <div class="skill">Adaptación</div>
+        <div class="skill">Versatilidad</div>
+      </div>
+    </section>
+    <section>
+      <h2>Hobbies</h2>
+      <div class="hobbies">
+        <div class="hobby">Cocina</div>
+        <div class="hobby">Fotografía</div>
+        <div class="hobby">Dibujo</div>
+      </div>
+    </section>
+    <section>
+      <h2>Referencias</h2>
+      <div class="referencia">
+        <b>Yury Marcela Castellanos Gallo</b> (Sobrino)<br>
+        Responsable, honesto y realiza cualquier labor con amor, dispuesto a aprender y eficiente.
+      </div>
+      <div class="referencia">
+        <b>Luis Andres Castellanos Castellanos</b> (Padrino)<br>
+        Persona muy responsable, honesta, de buena conducta, trabajadora y comprometida. Recomendado para cualquier oportunidad laboral.
+      </div>
+    </section>
+    <section>
+      <h2>Datos personales</h2>
+      <ul class="info-list">
+        <li>1: 📍 Floridablanca, Colombia</li>
+        <li>2: 📧 ludwingblancocas@gmail.com</li>
+        <li>3: 📱 +57 300 169 6244</li>
+        <li>4: 📅 Nacimiento: 21 mayo 2006</li>
+        <li>5: 🔗 <a href="https://www.linkedin.com/in/ludwing-blanco-927a47281/" target="_blank">LinkedIn</a></li>
+        <li>6: 🆔 CC: 1.097.911.522</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
