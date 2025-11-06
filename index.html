@@ -167,10 +167,20 @@
       font-size: 14px;
     }
 
+    #references {
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius);
+      padding: 40px 20px;
+      margin: 40px auto;
+      width: 80%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
       .hero-content { padding: 40px; }
       section { padding: 40px 30px; }
+      #references { width: 95%; }
     }
   </style>
 </head>
@@ -285,10 +295,24 @@
     </div>
   </section>
 
+  <section id="references">
+    <h2>REFERENCIAS</h2>
+    <div class="card">
+      <p>💬 Deja tu comentario o referencia sobre mi trabajo y trayectoria profesional. Tu opinión me ayuda a seguir mejorando.</p>
+      <div id="utterances-container" style="margin-top:20px;">
+        <script src="https://utteranc.es/client.js"
+          repo="LudwingBlanco/LudwingBlanco_HDV"
+          issue-term="pathname"
+          theme="github-dark"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <p>© 2025 Ludwing Santiago Blanco — Portafolio Profesional. Desarrollado con dedicación y enfoque técnico.</p>
   </footer>
 </body>
 </html>
-
-
