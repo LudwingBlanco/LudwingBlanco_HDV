@@ -1,315 +1,294 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ludwing Santiago Blanco Castellanos - Portafolio Profesional</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portafolio — Ludwing Santiago Blanco</title>
   <style>
     :root {
-      --color-bg-dark: #0b1220;
-      --color-bg-translucent: rgba(13, 23, 41, 0.78);
-      --color-primary: #143581;
-      --color-silver: #dfe6ee;
-      --color-white: #f6f9fc;
-      --color-shadow: 0 4px 32px rgba(20, 53, 129, 0.12);
-      --color-accent: #c6c7ca;
-      --border-accent: #4f6e8e;
+      --accent: #00b4d8;
+      --primary: #03045e;
+      --bg: #0b0e17;
+      --text: #f1f5f9;
+      --muted: #b3c5d1;
+      --radius: 16px;
+      font-family: 'Poppins', sans-serif;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: "Segoe UI", "Arial", sans-serif;
-      color: var(--color-white);
-      background: var(--color-bg-dark);
+      background: var(--bg);
+      color: var(--text);
       overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       min-height: 100vh;
+      background: url('unnamed-3.jpg') center/cover no-repeat;
+      backdrop-filter: blur(8px);
     }
 
-    body::before {
-      content: "";
-      position: fixed;
+    .hero::after {
+      content: '';
+      position: absolute;
       inset: 0;
-      z-index: 0;
-      background: url('unnamed-2.jpg') center/cover no-repeat;
-      filter: blur(8px) brightness(0.75);
-      opacity: 0.9;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
     }
 
-    .content-wrapper {
+    .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 30px 25px;
-      background: var(--color-bg-translucent);
-      border-radius: 20px;
-      border: 1.5px solid var(--border-accent);
-      box-shadow: var(--color-shadow);
-      animation: fadeIn 1.2s ease forwards;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-    .nombre {
-      font-size: 2.5rem;
+    .hero h1 {
+      font-size: 46px;
       font-weight: 700;
-      color: var(--color-silver);
-      letter-spacing: 1.5px;
-      text-shadow: 0 2px 14px #10274a;
-      animation: slideIn 1s ease;
-    }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+      color: var(--accent);
+      margin-bottom: 20px;
     }
 
-    .profesion {
-      font-size: 1.25rem;
-      color: var(--color-white);
-      margin-top: 8px;
-      text-shadow: 0 1px 10px #1435818c;
+    .hero p {
+      font-size: 18px;
+      color: var(--text);
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
-    .divider {
-      width: 80px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-      margin: 18px auto 25px;
-      border-radius: 4px;
-      animation: glow 2s infinite alternate;
+    .contact-info {
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: var(--radius);
+      backdrop-filter: blur(10px);
+      width: fit-content;
     }
-    @keyframes glow {
-      from { box-shadow: 0 0 8px #4f6e8e55; }
-      to { box-shadow: 0 0 16px #4f6e8eaa; }
+
+    .contact-info p {
+      margin: 6px 0;
+      font-size: 15px;
+      color: var(--muted);
     }
 
     section {
-      margin-bottom: 2.5rem;
-      padding: 18px 20px;
-      background: rgba(15, 29, 54, 0.61);
-      border-left: 2.5px solid var(--border-accent);
-      border-radius: 14px;
-      box-shadow: 0 1.5px 18px #14294d19;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    section:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 20px #1435813f;
+      padding: 60px 100px;
+      background: var(--bg);
     }
 
     h2 {
-      color: var(--color-accent);
-      font-weight: 600;
-      margin-bottom: 14px;
-      letter-spacing: 1px;
-      font-size: 1.35rem;
-      text-transform: uppercase;
-      text-shadow: 0 1px 7px #4f6e8e66;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      color: var(--accent);
+      font-size: 28px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      margin-bottom: 20px;
     }
 
-    p, li {
-      font-size: 1.05rem;
-      color: var(--color-silver);
-      line-height: 1.5rem;
-    }
-
-    ul.info-list {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .info-list li {
-      margin-bottom: 0.6rem;
-    }
-
-    a {
-      color: var(--color-accent);
-      text-decoration: underline;
-      transition: color 0.3s;
-    }
-    a:hover {
-      color: var(--color-white);
-    }
-
-    .formacion-grid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: rgba(22, 36, 63, 0.6);
-      border-radius: 12px;
-      padding: 15px 20px;
-      transition: all 0.3s ease;
-      border-left: 2px solid var(--border-accent);
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 3px 15px #1435814a;
-    }
-    .card b {
-      color: var(--color-white);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     }
 
-    .skills, .hobbies {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-    .skill, .hobby {
-      background: linear-gradient(90deg, #132b41, #788da233 80%);
-      color: var(--color-accent);
-      padding: 0.3rem 0.9rem;
-      border-radius: 15px;
-      font-size: 1rem;
-      transition: transform 0.3s ease, background 0.3s;
-      box-shadow: 0 1px 7px #7d8fa77b;
-    }
-    .skill:hover, .hobby:hover {
-      transform: scale(1.08);
-      background: linear-gradient(90deg, #143581, #4f6e8e);
+    .project {
+      margin-bottom: 20px;
+      line-height: 1.6;
     }
 
-    .referencia {
-      background: rgba(21, 32, 52, 0.85);
-      border-left: 3px solid var(--border-accent);
+    .project a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .skills-container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .skill {
+      margin-bottom: 20px;
+    }
+
+    .skill-name {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .skill-bar {
+      height: 10px;
+      background: rgba(255,255,255,0.1);
       border-radius: 10px;
-      margin-bottom: 1rem;
-      padding: 10px 15px;
-      box-shadow: 0 1px 13px #173c644c;
+      overflow: hidden;
     }
 
-    @media (max-width: 700px) {
-      .content-wrapper { padding: 20px 10px; }
-      .nombre { font-size: 2rem; }
+    .skill-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      border-radius: 10px;
+      animation: fill 2s forwards;
+    }
+
+    @keyframes fill {
+      from { width: 0; }
+      to { width: var(--level); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      background: #080b13;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-content { padding: 40px; }
+      section { padding: 40px 30px; }
     }
   </style>
 </head>
 <body>
-  <div class="content-wrapper">
-    <header>
-      <div class="nombre">Ludwing Santiago Blanco Castellanos</div>
-      <div class="profesion">Técnico en Asistencia Administrativa | Est. Ingeniería Industrial</div>
-      <div class="divider"></div>
-    </header>
-
-    <section>
-      <h2>Datos Personales</h2>
-      <ul class="info-list">
-        <li>📍 Floridablanca, Colombia</li>
-        <li>📧 ludwingblancocas@gmail.com</li>
-        <li>📱 +57 300 169 6244</li>
-        <li>📅 Nacimiento: 21 mayo 2006</li>
-        <li>🔗 <a href="https://www.linkedin.com/in/ludwing-blanco-927a47281/" target="_blank">LinkedIn</a></li>
-        <li>🆔 CC: 1.097.911.522</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Sobre mí</h2>
-      <p>
-        Cuento con experiencia demostrada en asesoría comercial y soporte administrativo, destacando por mi capacidad para resolver problemas, adaptarme rápidamente y mantener una excelente atención al cliente. Busco seguir creciendo en entornos donde pueda aplicar mis conocimientos y aportar a la eficiencia operativa.
-      </p>
-    </section>
-
-    <section>
-      <h2>Experiencia Laboral</h2>
-      <ul class="info-list">
-        <li><b>Técnico en Asistencia Administrativa</b> – SANDA STORE (Mar 2023 - Jul 2024)<br>
-          Apoyé la gestión documental, coordinación de agendas y procesos de inventario, facturación y compras.</li>
-        <li><b>Asesor de Ventas</b> – Fachero’s (Mar 2023 - Abr 2024)<br>
-          Alcancé metas de ventas mediante atención personalizada, manejo de caja y fidelización de clientes.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Formación y Certificaciones</h2>
-      <div class="formacion-grid">
-        <div class="card">
-          <h3 style="color:#c6c7ca;">🎓 Estudios</h3>
-          <ul class="info-list">
-            <li><b>Ingeniería Industrial</b> (En curso)<br>Unidades Tecnológicas de Santander</li>
-            <li><b>Técnico en Asistencia Administrativa</b> (Feb 2021 - Nov 2022)<br>SENA</li>
-            <li><b>Bachiller Técnico en Énfasis Administrativo</b> (Ene 2011 - Nov 2022)<br>Colegio Gonzalo Jiménez Navas</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3 style="color:#c6c7ca;">🏅 Certificaciones</h3>
-          <ul class="info-list">
-            <li><b>Fundamentos del Sistema de Gestión de Seguridad y Salud en el Trabajo</b> – SENA (Jun 2025)<br>
-              <a href="https://certificados.sena.edu.co/CertificadoDigital/com.sena.guardar?var1=9122003223076CC1097911522C" target="_blank">Ver certificado</a></li>
-            <li><b>Análisis de Sistemas de Seguridad y Salud en el Trabajo</b> – SENA (Jun 2025)<br>
-              <a href="https://certificados.sena.edu.co/CertificadoDigital/com.sena.guardar?var1=9122003223069CC1097911522C" target="_blank">Ver certificado</a></li>
-            <li><b>Técnico en Asistencia Administrativa</b> – SENA (Nov 2022)<br>
-              <a href="https://certificados.sena.edu.co/CertificadoDigital/com.sena.guardar?var1=9309002256964TI1097911522C" target="_blank">Ver certificado</a></li>
-          </ul>
-        </div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Ludwing Santiago Blanco</h1>
+      <p>Estudiante de Ingeniería Industrial y Técnico en Asistencia Administrativa con una sólida formación en optimización de procesos, gestión eficiente de recursos y mejora continua. Combino un enfoque analítico con competencias administrativas y un compromiso constante con la calidad y la productividad. Me motiva trabajar en proyectos que integren innovación, eficiencia y organización para generar resultados sostenibles.</p>
+      <div class="contact-info">
+        <p><strong>📍 Ubicación:</strong> Floridablanca, Santander - Colombia</p>
+        <p><strong>📞 Teléfono:</strong> +57 300 169 6244</p>
+        <p><strong>📧 Correo:</strong> ludwingblancocas@gmail.com</p>
+        <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/ludwing-blanco-927a47281/" style="color: var(--accent); text-decoration: none;">Ludwing Blanco</a></p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2>Reconocimientos</h2>
-      <div class="referencia">
-        <b>Ganador Competencia Triángulo del Servicio al Cliente</b><br>
-        Nivel Departamental Zone Skills 2022 - SENA / Gonzalo Jiménez Navas
+  <section id="skills">
+    <h2>Habilidades</h2>
+    <div class="skills-container">
+      <div class="skill">
+        <div class="skill-name">Excel y Análisis de Datos</div>
+        <div class="skill-bar"><div class="skill-fill" style="--level: 60%;"></div></div>
       </div>
-      <div class="referencia">
-        <b>Mejor Aprendiz Técnico en Asistencia Administrativa</b> (Nov 2022) - SENA
+      <div class="skill">
+        <div class="skill-name">Gestión de Inventarios y Logística</div>
+        <div class="skill-bar"><div class="skill-fill" style="--level: 85%;"></div></div>
       </div>
-    </section>
+      <div class="skill">
+        <div class="skill-name">Comunicación y Trabajo en Equipo</div>
+        <div class="skill-bar"><div class="skill-fill" style="--level: 95%;"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Atención al Cliente y Ventas</div>
+        <div class="skill-bar"><div class="skill-fill" style="--level: 88%;"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Planeación y Control Administrativo</div>
+        <div class="skill-bar"><div class="skill-fill" style="--level: 90%;"></div></div>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Habilidades</h2>
-      <div class="skills">
-        <div class="skill">Comunicación efectiva</div>
-        <div class="skill">Gestión</div>
-        <div class="skill">Comprensión de dificultades</div>
-        <div class="skill">Adaptación</div>
-        <div class="skill">Versatilidad</div>
+  <section id="experience">
+    <h2>Experiencia Laboral</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Técnico en Asistencia Administrativa — SANDA STORE</h3>
+        <p>03/2023 – 07/2024 · Floridablanca</p>
+        <p>Participé activamente en la gestión documental, control de inventarios, apoyo contable y coordinación de agendas. Desarrollé procedimientos para optimizar la comunicación entre áreas administrativas y de ventas, logrando una mejora en la eficiencia del flujo de trabajo. También brindé soporte en la preparación de informes, organización de la base de datos de proveedores y control de facturación, garantizando exactitud y cumplimiento en los procesos internos.</p>
       </div>
-    </section>
+      <div class="card">
+        <h3>Asesor de Ventas / Apoyo en Bodega — Fachero $ Tienda Física</h3>
+        <p>03/2023 – 04/2024 · Bucaramanga</p>
+        <p>Me desempeñé en el área de atención al cliente, asesorando en la selección de productos y asegurando la satisfacción del comprador. Gestioné inventarios y logística de bodega, manteniendo el orden y control de mercancía. Además, implementé estrategias de exhibición visual para potenciar la experiencia de compra y participé en campañas promocionales que incrementaron las ventas durante temporadas clave.</p>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Hobbies</h2>
-      <div class="hobbies">
-        <div class="hobby">Cocina creativa</div>
-        <div class="hobby">Fotografía urbana</div>
-        <div class="hobby">Diseño digital</div>
-        <div class="hobby">Tecnología y gadgets</div>
-        <div class="hobby">Música electrónica</div>
-        <div class="hobby">Videojuegos estratégicos</div>
-        <div class="hobby">Aprendizaje de idiomas</div>
+  <section id="projects">
+    <h2>Proyectos Universitarios</h2>
+    <div class="grid">
+      <div class="card project">
+        <h3>Implementación del proceso de presupuestación — Calzado Lolly Kid's</h3>
+        <p>Diseñé y propuse un sistema de presupuestación operativa para mejorar la planificación financiera y reducir errores en la toma de decisiones. El proyecto se centró en la creación de presupuestos mensuales, análisis de desviaciones y automatización de cálculos mediante Excel avanzado.</p>
+        <p><a href="http://repositorio.uts.edu.co:8080/xmlui/handle/123456789/17320" target="_blank">Ver en repositorio UTS</a></p>
       </div>
-    </section>
+      <div class="card project">
+        <h3>Mejora de la eficiencia operativa — Calzado Lolly Kid's</h3>
+        <p>Analicé los procesos productivos de la empresa, identificando áreas de desperdicio y proponiendo mejoras en tiempos, distribución de planta y control de inventarios. Se desarrolló un plan de optimización que permitió mejorar el rendimiento operativo y la productividad general.</p>
+        <p><a href="http://repositorio.uts.edu.co:8080/xmlui/handle/123456789/19212" target="_blank">Ver en repositorio UTS</a></p>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Referencias</h2>
-      <div class="referencia">
-        <b>Yury Marcela Castellanos Gallo</b> (Sobrino)<br>
-        Responsable, honesto y eficiente. Dispuesto a aprender y dar siempre lo mejor.
+  <section id="certificates">
+    <h2>Certificaciones</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🏅 Fundamentos del Sistema de Gestión de Seguridad y Salud en el Trabajo</h3>
+        <p>SENA – Junio 2025</p>
+        <p><a href="https://certificados.sena.edu.co/CertificadoDigital/com.sena.guardar?var1=9122003223076CC1097911522C" target="_blank">Ver certificado</a></p>
       </div>
-      <div class="referencia">
-        <b>Luis Andres Castellanos Castellanos</b> (Padrino)<br>
-        Persona responsable, de buena conducta, trabajadora y comprometida.
+      <div class="card">
+        <h3>🏅 Análisis de Sistemas de Seguridad y Salud en el Trabajo</h3>
+        <p>SENA – Junio 2025</p>
+        <p><a href="https://certificados.sena.edu.co/CertificadoDigital/com.sena.guardar?var1=9122003223069CC1097911522C" target="_blank">Ver certificado</a></p>
       </div>
-    </section>
-  </div>
+      <div class="card">
+        <h3>🏅 Técnico en Asistencia Administrativa</h3>
+        <p>SENA – Noviembre 2022</p>
+        <p><a href="https://certificados.sena.edu.co/CertificadoDigital/com.sena.guardar?var1=9309002256964TI1097911522C" target="_blank">Ver certificado</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>🎓 Estudios</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Ingeniería Industrial (En curso)</h3>
+        <p>Unidades Tecnológicas de Santander</p>
+      </div>
+      <div class="card">
+        <h3>Técnico en Asistencia Administrativa (Feb 2021 - Nov 2022)</h3>
+        <p>SENA</p>
+      </div>
+      <div class="card">
+        <h3>Bachiller Técnico en Énfasis Administrativo (Ene 2011 - Nov 2022)</h3>
+        <p>Colegio Gonzalo Jiménez Navas</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Ludwing Santiago Blanco — Portafolio Profesional. Desarrollado con dedicación y enfoque técnico.</p>
+  </footer>
 </body>
 </html>
+
 
