@@ -23,21 +23,24 @@
       overflow-x: hidden;
     }
 
+    /* HERO - background image with reduced blur so photo is more visible */
     .hero {
       position: relative;
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: 100vh;
       background: url('unnamed-3.jpg') center/cover no-repeat;
-      backdrop-filter: blur(8px);
+      /* reduced blur so the photo is still perceptible */
+      backdrop-filter: blur(3px);
     }
 
     .hero::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.55);
-      backdrop-filter: blur(4px);
+      /* slightly lighter overlay so image se ve mejor */
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(2px);
     }
 
     .hero-content {
@@ -68,7 +71,7 @@
       background: rgba(255,255,255,0.08);
       padding: 20px;
       border-radius: var(--radius);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(8px);
       width: fit-content;
     }
 
