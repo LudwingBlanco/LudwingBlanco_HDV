@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Portafolio — Ludwing Santiago Blanco Castellanos</title>
+  <title>Portafolio — Ludwing Santiago Blanco</title>
   <style>
     :root {
       --accent: #00b4d8;
@@ -23,33 +23,34 @@
       overflow-x: hidden;
     }
 
-    /* HERO - background image with reduced blur so photo is more visible */
+    /* 🔷 Hero section */
     .hero {
       position: relative;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
       min-height: 100vh;
-      background: url('unnamed-3.jpg') center/cover no-repeat;
-      /* reduced blur so the photo is still perceptible */
-      backdrop-filter: blur(3px);
+      background: url('unnamed-3.jpg') center/cover no-repeat fixed;
+      filter: brightness(0.9);
+      transform: scaleX(-1); /* modo espejo */
     }
 
     .hero::after {
       content: '';
       position: absolute;
       inset: 0;
-      /* slightly lighter overlay so image se ve mejor */
-      background: rgba(0,0,0,0.45);
-      backdrop-filter: blur(2px);
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(3px);
+      z-index: 1;
     }
 
     .hero-content {
+      transform: scaleX(-1); /* revertir texto */
       position: relative;
       z-index: 2;
+      max-width: 600px;
       padding: 60px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      animation: fade-up 1.5s ease forwards;
     }
 
     .hero h1 {
@@ -61,9 +62,8 @@
 
     .hero p {
       font-size: 18px;
-      color: var(--text);
-      max-width: 600px;
       line-height: 1.6;
+      color: var(--text);
       margin-bottom: 20px;
     }
 
@@ -71,8 +71,7 @@
       background: rgba(255,255,255,0.08);
       padding: 20px;
       border-radius: var(--radius);
-      backdrop-filter: blur(8px);
-      width: fit-content;
+      backdrop-filter: blur(6px);
     }
 
     .contact-info p {
@@ -81,9 +80,10 @@
       color: var(--muted);
     }
 
+    /* 🔷 Section styles */
     section {
       padding: 60px 100px;
-      background: var(--bg);
+      animation: fade-up 1.5s ease forwards;
     }
 
     h2 {
@@ -112,35 +112,20 @@
       box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     }
 
-    .project {
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
     .project a {
       color: var(--accent);
       text-decoration: none;
-      font-weight: 500;
     }
+    .project a:hover { text-decoration: underline; }
 
-    .project a:hover {
-      text-decoration: underline;
-    }
-
+    /* 🔷 Skills bars */
     .skills-container {
       max-width: 800px;
       margin: auto;
     }
 
-    .skill {
-      margin-bottom: 20px;
-    }
-
-    .skill-name {
-      margin-bottom: 8px;
-      color: var(--muted);
-      font-weight: 500;
-    }
+    .skill { margin-bottom: 20px; }
+    .skill-name { margin-bottom: 8px; color: var(--muted); font-weight: 500; }
 
     .skill-bar {
       height: 10px;
@@ -162,14 +147,13 @@
       to { width: var(--level); }
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: var(--muted);
-      background: #080b13;
-      font-size: 14px;
+    /* 🔷 Animations */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
+    /* 🔷 References section */
     #references {
       background: rgba(255,255,255,0.03);
       border-radius: var(--radius);
@@ -179,19 +163,37 @@
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
 
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      background: #080b13;
+      font-size: 14px;
+    }
+
+    /* 📱 Responsive */
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-content { padding: 40px; }
-      section { padding: 40px 30px; }
+      .hero {
+        justify-content: center;
+        padding: 40px 20px;
+        text-align: center;
+      }
+      .hero-content {
+        padding: 20px;
+      }
+      section {
+        padding: 40px 20px;
+      }
       #references { width: 95%; }
     }
   </style>
 </head>
 <body>
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
       <h1>Ludwing Santiago Blanco</h1>
-      <p>Estudiante de Ingeniería Industrial y Técnico en Asistencia Administrativa con una sólida formación en optimización de procesos, gestión eficiente de recursos y mejora continua. Combino un enfoque analítico con competencias administrativas y un compromiso constante con la calidad y la productividad. Me motiva trabajar en proyectos que integren innovación, eficiencia y organización para generar resultados sostenibles.</p>
+      <p>Estudiante de Ingeniería Industrial y Técnico en Asistencia Administrativa con una sólida formación en optimización de procesos, gestión eficiente de recursos y mejora continua. Combino un enfoque analítico con competencias administrativas y un compromiso constante con la calidad y la productividad.</p>
       <div class="contact-info">
         <p><strong>📍 Ubicación:</strong> Floridablanca, Santander - Colombia</p>
         <p><strong>📞 Teléfono:</strong> +57 300 169 6244</p>
@@ -201,64 +203,53 @@
     </div>
   </section>
 
+  <!-- HABILIDADES -->
   <section id="skills">
     <h2>Habilidades</h2>
     <div class="skills-container">
-      <div class="skill">
-        <div class="skill-name">Excel y Análisis de Datos</div>
-        <div class="skill-bar"><div class="skill-fill" style="--level: 60%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Gestión de Inventarios y Logística</div>
-        <div class="skill-bar"><div class="skill-fill" style="--level: 85%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Comunicación y Trabajo en Equipo</div>
-        <div class="skill-bar"><div class="skill-fill" style="--level: 95%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Atención al Cliente y Ventas</div>
-        <div class="skill-bar"><div class="skill-fill" style="--level: 88%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Planeación y Control Administrativo</div>
-        <div class="skill-bar"><div class="skill-fill" style="--level: 90%;"></div></div>
-      </div>
+      <div class="skill"><div class="skill-name">Excel y Análisis de Datos</div><div class="skill-bar"><div class="skill-fill" style="--level: 60%;"></div></div></div>
+      <div class="skill"><div class="skill-name">Gestión de Inventarios y Logística</div><div class="skill-bar"><div class="skill-fill" style="--level: 85%;"></div></div></div>
+      <div class="skill"><div class="skill-name">Comunicación y Trabajo en Equipo</div><div class="skill-bar"><div class="skill-fill" style="--level: 95%;"></div></div></div>
+      <div class="skill"><div class="skill-name">Atención al Cliente y Ventas</div><div class="skill-bar"><div class="skill-fill" style="--level: 88%;"></div></div></div>
+      <div class="skill"><div class="skill-name">Planeación y Control Administrativo</div><div class="skill-bar"><div class="skill-fill" style="--level: 90%;"></div></div></div>
     </div>
   </section>
 
+  <!-- EXPERIENCIA -->
   <section id="experience">
     <h2>Experiencia Laboral</h2>
     <div class="grid">
       <div class="card">
         <h3>Técnico en Asistencia Administrativa — SANDA STORE</h3>
         <p>03/2023 – 07/2024 · Floridablanca</p>
-        <p>Participé activamente en la gestión documental, control de inventarios, apoyo contable y coordinación de agendas. Desarrollé procedimientos para optimizar la comunicación entre áreas administrativas y de ventas, logrando una mejora en la eficiencia del flujo de trabajo. También brindé soporte en la preparación de informes, organización de la base de datos de proveedores y control de facturación, garantizando exactitud y cumplimiento en los procesos internos.</p>
+        <p>Participé en la gestión documental, control de inventarios, apoyo contable y coordinación de agendas. Implementé procedimientos para optimizar la comunicación interna y mejorar la eficiencia operativa.</p>
       </div>
       <div class="card">
         <h3>Asesor de Ventas / Apoyo en Bodega — Fachero $ Tienda Física</h3>
         <p>03/2023 – 04/2024 · Bucaramanga</p>
-        <p>Me desempeñé en el área de atención al cliente, asesorando en la selección de productos y asegurando la satisfacción del comprador. Gestioné inventarios y logística de bodega, manteniendo el orden y control de mercancía. Además, implementé estrategias de exhibición visual para potenciar la experiencia de compra y participé en campañas promocionales que incrementaron las ventas durante temporadas clave.</p>
+        <p>Atendí clientes, gestioné inventarios y apoyé la logística de bodega. Aporté a la exhibición de productos y campañas que incrementaron las ventas.</p>
       </div>
     </div>
   </section>
 
+  <!-- PROYECTOS -->
   <section id="projects">
     <h2>Proyectos Universitarios</h2>
     <div class="grid">
       <div class="card project">
         <h3>Implementación del proceso de presupuestación — Calzado Lolly Kid's</h3>
-        <p>Diseñé y propuse un sistema de presupuestación operativa para mejorar la planificación financiera y reducir errores en la toma de decisiones. El proyecto se centró en la creación de presupuestos mensuales, análisis de desviaciones y automatización de cálculos mediante Excel avanzado.</p>
+        <p>Diseñé un sistema de presupuestación operativa para mejorar la planificación financiera y automatizar cálculos mediante Excel.</p>
         <p><a href="http://repositorio.uts.edu.co:8080/xmlui/handle/123456789/17320" target="_blank">Ver en repositorio UTS</a></p>
       </div>
       <div class="card project">
         <h3>Mejora de la eficiencia operativa — Calzado Lolly Kid's</h3>
-        <p>Analicé los procesos productivos de la empresa, identificando áreas de desperdicio y proponiendo mejoras en tiempos, distribución de planta y control de inventarios. Se desarrolló un plan de optimización que permitió mejorar el rendimiento operativo y la productividad general.</p>
+        <p>Analicé procesos productivos e implementé mejoras en tiempos, distribución de planta y control de inventarios.</p>
         <p><a href="http://repositorio.uts.edu.co:8080/xmlui/handle/123456789/19212" target="_blank">Ver en repositorio UTS</a></p>
       </div>
     </div>
   </section>
 
+  <!-- CERTIFICACIONES -->
   <section id="certificates">
     <h2>Certificaciones</h2>
     <div class="grid">
@@ -280,24 +271,17 @@
     </div>
   </section>
 
+  <!-- ESTUDIOS -->
   <section id="education">
     <h2>🎓 Estudios</h2>
     <div class="grid">
-      <div class="card">
-        <h3>Ingeniería Industrial (En curso)</h3>
-        <p>Unidades Tecnológicas de Santander</p>
-      </div>
-      <div class="card">
-        <h3>Técnico en Asistencia Administrativa (Feb 2021 - Nov 2022)</h3>
-        <p>SENA</p>
-      </div>
-      <div class="card">
-        <h3>Bachiller Técnico en Énfasis Administrativo (Ene 2011 - Nov 2022)</h3>
-        <p>Colegio Gonzalo Jiménez Navas</p>
-      </div>
+      <div class="card"><h3>Ingeniería Industrial (En curso)</h3><p>Unidades Tecnológicas de Santander</p></div>
+      <div class="card"><h3>Técnico en Asistencia Administrativa (Feb 2021 - Nov 2022)</h3><p>SENA</p></div>
+      <div class="card"><h3>Bachiller Técnico en Énfasis Administrativo (Ene 2011 - Nov 2022)</h3><p>Colegio Gonzalo Jiménez Navas</p></div>
     </div>
   </section>
 
+  <!-- REFERENCIAS -->
   <section id="references">
     <h2>REFERENCIAS</h2>
     <div class="card">
